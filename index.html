@@ -290,8 +290,10 @@
           <ol>
             <li><a href="#vi-data">Dữ liệu được xử lý</a></li>
             <li><a href="#vi-use">Cách dữ liệu được sử dụng</a></li>
+            <li><a href="#vi-ads">Quảng cáo và lựa chọn quyền riêng tư</a></li>
             <li><a href="#vi-sharing">Chia sẻ với bên thứ ba</a></li>
             <li><a href="#vi-retention">Lưu trữ và xóa dữ liệu</a></li>
+            <li><a href="#vi-security">Bảo mật thông tin</a></li>
             <li><a href="#vi-children">Quyền riêng tư trẻ em</a></li>
             <li><a href="#vi-changes">Thay đổi và liên hệ</a></li>
           </ol>
@@ -301,47 +303,67 @@
           <section id="vi-data">
             <h2>1. Dữ liệu được xử lý</h2>
             <h3>Tiến trình trò chơi của bạn</h3>
-            <p>Tiến trình chơi Tiny Shelf, chẳng hạn như các màn đã hoàn thành, khu vực đã mở khóa và tùy chỉnh trong trò chơi, được lưu trên thiết bị của bạn. Tiny Shelf không tải bản lưu trò chơi này lên máy chủ của chúng tôi. Nếu bạn gỡ ứng dụng hoặc xóa dữ liệu ứng dụng, tiến trình chỉ lưu trên thiết bị có thể bị xóa.</p>
-            <h3>Dữ liệu từ quảng cáo và phân tích</h3>
-            <p>Tiny Shelf tích hợp Google AdMob để cung cấp quảng cáo và Firebase Analytics để hiểu cách trò chơi được sử dụng, đo lường hiệu quả và cải thiện độ ổn định. Các SDK này có thể xử lý dữ liệu kỹ thuật và sử dụng như mã nhận dạng thiết bị hoặc ứng dụng, thông tin thiết bị, địa chỉ IP, tương tác với trò chơi và dữ liệu liên quan đến quảng cáo. Tùy cấu hình Firebase Analytics, dữ liệu sử dụng có thể bao gồm sự kiện gameplay như tiến trình màn chơi hoặc khu vực. Dữ liệu cụ thể phụ thuộc vào cấu hình SDK, thiết bị và cài đặt của bạn.</p>
+            <p>Tiến trình chơi Tiny Shelf, chẳng hạn như các màn đã hoàn thành, khu vực đã mở khóa và tùy chỉnh trong trò chơi, được lưu cục bộ trên thiết bị. Ứng dụng không yêu cầu bạn tạo tài khoản để lưu tiến trình theo cách này. Tiny Shelf không tải bản lưu trò chơi lên máy chủ do chúng tôi vận hành. Nếu bạn gỡ ứng dụng hoặc xóa dữ liệu ứng dụng, tiến trình chỉ lưu trên thiết bị có thể bị xóa.</p>
+            <h3>Dữ liệu sử dụng trò chơi</h3>
+            <p>Tiny Shelf tích hợp Firebase Analytics để hiểu cách trò chơi được sử dụng, đo lường hoạt động và cải thiện độ ổn định. Tùy cách chúng tôi cấu hình Analytics, các sự kiện có thể bao gồm phiên chơi, thao tác trong trò chơi hoặc việc hoàn thành màn và mở khóa khu vực. Đây là dữ liệu sự kiện gửi qua SDK để phân tích, không phải cơ chế đồng bộ bản lưu trò chơi của bạn. Những sự kiện nào được ghi nhận phụ thuộc vào phiên bản và cấu hình của ứng dụng.</p>
+            <h3>Dữ liệu kỹ thuật và quảng cáo</h3>
+            <p>Tiny Shelf tích hợp Google AdMob để phân phối và đo lường quảng cáo. Khi SDK quảng cáo hoặc phân tích hoạt động, Google có thể xử lý một số dữ liệu như mã nhận dạng thiết bị hoặc quảng cáo, mã ứng dụng, phiên bản ứng dụng, hệ điều hành, thông tin thiết bị, địa chỉ IP, thời điểm sử dụng, lượt hiển thị hoặc tương tác với quảng cáo. Các loại dữ liệu thực tế có thể khác nhau theo thiết bị, khu vực, lựa chọn quyền riêng tư và cấu hình SDK; không phải mọi loại dữ liệu nêu ví dụ đều được thu thập trong mọi trường hợp.</p>
           </section>
 
           <section id="vi-use">
             <h2>2. Cách dữ liệu được sử dụng</h2>
+            <p>Chúng tôi sử dụng dữ liệu trò chơi và các dịch vụ tích hợp cho những mục đích sau:</p>
             <ul>
-              <li>Lưu và hiển thị tiến trình màn chơi, khu vực đã mở khóa và thiết lập trò chơi trên thiết bị của bạn.</li>
-              <li>Hiển thị, phân phối và đo lường quảng cáo qua Google AdMob.</li>
-              <li>Phân tích cách trò chơi được sử dụng và chẩn đoán sự cố qua Firebase Analytics để duy trì, cải thiện Tiny Shelf.</li>
+              <li>Lưu và hiển thị tiến trình màn chơi, khu vực đã mở khóa và thiết lập trò chơi ngay trên thiết bị của bạn.</li>
+              <li>Vận hành các tính năng cốt lõi của trò chơi và giúp bạn tiếp tục hành trình ở các màn, khu vực đã mở.</li>
+              <li>Phân phối, giới hạn tần suất, đo lường lượt hiển thị và hiệu quả quảng cáo qua Google AdMob.</li>
+              <li>Hiểu xu hướng sử dụng ở mức phù hợp, phát hiện lỗi và cải thiện hiệu năng, độ ổn định của Tiny Shelf qua Firebase Analytics.</li>
             </ul>
-            <p>Cá nhân hóa quảng cáo, nếu có, phụ thuộc vào cấu hình dịch vụ, lựa chọn về quyền riêng tư và quy định áp dụng tại khu vực của bạn. Bạn cũng có thể quản lý một số mã nhận dạng quảng cáo trong phần cài đặt quyền riêng tư của thiết bị.</p>
+            <p>Chúng tôi không dùng dữ liệu tiến trình lưu cục bộ để đăng nhập bạn vào tài khoản hoặc đồng bộ tiến trình với máy chủ của Tiny Shelf. Dữ liệu sự kiện gửi qua Analytics và dữ liệu quảng cáo được xử lý riêng theo cấu hình các SDK tương ứng.</p>
+          </section>
+
+          <section id="vi-ads">
+            <h2>3. Quảng cáo và lựa chọn quyền riêng tư</h2>
+            <p>Tiny Shelf sử dụng Google AdMob, vì vậy bạn có thể thấy quảng cáo trong trò chơi. Tùy cấu hình quảng cáo, khu vực của bạn và lựa chọn quyền riêng tư áp dụng, quảng cáo có thể được cá nhân hóa hoặc không cá nhân hóa. Chính sách này không khẳng định một loại quảng cáo cụ thể sẽ luôn được hiển thị.</p>
+            <p>Bạn có thể quản lý hoặc đặt lại mã nhận dạng quảng cáo, giới hạn cá nhân hóa nếu thiết bị cung cấp lựa chọn đó, và xem các quyền ứng dụng trong phần cài đặt quyền riêng tư của hệ điều hành. Tên và vị trí các tùy chọn khác nhau tùy thiết bị và phiên bản hệ điều hành. Nếu ứng dụng hiển thị yêu cầu lựa chọn về quyền riêng tư hoặc sự đồng ý tại khu vực của bạn, lựa chọn đó sẽ được áp dụng theo nội dung hiển thị trong ứng dụng.</p>
+            <p>Việc thay đổi cài đặt quảng cáo có thể ảnh hưởng đến cách quảng cáo được chọn hoặc đo lường, nhưng không nhất thiết loại bỏ hoàn toàn quảng cáo khỏi trò chơi.</p>
           </section>
 
           <section id="vi-sharing">
-            <h2>3. Chia sẻ với bên thứ ba</h2>
-            <p>Bản lưu tiến trình trò chơi được lưu trên thiết bị và Tiny Shelf không tải bản lưu đó lên máy chủ của chúng tôi. Tuy nhiên, tùy cấu hình Firebase Analytics, một số sự kiện sử dụng trò chơi có thể được gửi đến Google để phân tích. Các SDK Google được tích hợp cũng có thể nhận dữ liệu kỹ thuật và dữ liệu sử dụng nêu trên để cung cấp dịch vụ tương ứng, theo chính sách và điều khoản riêng của họ:</p>
+            <h2>4. Chia sẻ với bên thứ ba</h2>
+            <p>Bản lưu tiến trình trò chơi được giữ trên thiết bị và Tiny Shelf không tải bản lưu đó lên máy chủ do chúng tôi vận hành. Tuy nhiên, Firebase Analytics có thể gửi các sự kiện sử dụng đã cấu hình đến Google; AdMob có thể xử lý dữ liệu cần thiết để phân phối và đo lường quảng cáo. Các dịch vụ này do Google cung cấp và xử lý dữ liệu theo chính sách, điều khoản và cài đặt dịch vụ của Google.</p>
+            <p>Để biết thêm về cách Google xử lý dữ liệu, bạn có thể xem:</p>
             <ul>
               <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Chính sách quyền riêng tư của Google</a></li>
               <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Cách Google sử dụng dữ liệu trong AdMob</a></li>
               <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Chính sách Firebase Analytics</a></li>
             </ul>
-            <p>Các SDK này không đồng bộ bản lưu trò chơi với máy chủ của Tiny Shelf. Dữ liệu sự kiện mà SDK nhận được phụ thuộc vào cách tích hợp và cấu hình trong trò chơi.</p>
+            <p>Việc Google xử lý dữ liệu qua SDK không có nghĩa là bản lưu trò chơi của bạn được đồng bộ với máy chủ Tiny Shelf. Dữ liệu sự kiện cụ thể mà SDK nhận được phụ thuộc vào cách tích hợp và cấu hình trong trò chơi.</p>
           </section>
 
           <section id="vi-retention">
-            <h2>4. Lưu trữ và xóa dữ liệu</h2>
-            <p>Tiến trình trò chơi lưu trên thiết bị cho đến khi bạn xóa dữ liệu ứng dụng hoặc gỡ Tiny Shelf. Tùy vào thiết bị và cài đặt hệ điều hành, bản sao lưu thiết bị có thể bao gồm dữ liệu ứng dụng. Dữ liệu mà Google xử lý được lưu giữ theo chính sách và thời hạn của Google.</p>
-            <p>Bạn có thể quản lý mã nhận dạng quảng cáo hoặc các tùy chọn quyền riêng tư khả dụng trong cài đặt thiết bị. Để tìm hiểu về dữ liệu do Google xử lý, hãy sử dụng các liên kết bên trên và công cụ quyền riêng tư của Google.</p>
+            <h2>5. Lưu trữ và xóa dữ liệu</h2>
+            <p>Tiến trình trò chơi nằm trên thiết bị cho đến khi bạn xóa dữ liệu Tiny Shelf hoặc gỡ ứng dụng. Nếu hệ điều hành hoặc dịch vụ sao lưu thiết bị của bạn sao lưu dữ liệu ứng dụng, bản sao lưu đó có thể được lưu theo cài đặt và chính sách riêng của nền tảng sao lưu. Tiny Shelf không kiểm soát cách hệ điều hành hoặc dịch vụ sao lưu của bạn lưu giữ những bản sao này.</p>
+            <p>Để xóa tiến trình cục bộ, bạn có thể xóa dữ liệu ứng dụng trong cài đặt thiết bị hoặc gỡ Tiny Shelf. Hãy lưu ý rằng thao tác này có thể xóa vĩnh viễn tiến trình chưa được sao lưu. Cách thực hiện cụ thể tùy thiết bị và hệ điều hành.</p>
+            <p>Dữ liệu mà Google xử lý qua AdMob và Firebase Analytics được lưu giữ theo chính sách, công cụ và thời hạn của Google. Việc xóa dữ liệu khỏi thiết bị không tự động xóa dữ liệu mà Google đã xử lý; hãy tham khảo các liên kết Google ở trên để biết lựa chọn và quy trình liên quan.</p>
+          </section>
+
+          <section id="vi-security">
+            <h2>6. Bảo mật thông tin</h2>
+            <p>Tiến trình trò chơi được lưu cục bộ và mức độ bảo vệ của dữ liệu đó phụ thuộc một phần vào cơ chế bảo mật của thiết bị, tài khoản hệ điều hành và bản sao lưu bạn sử dụng. Bạn nên dùng khóa màn hình, giữ hệ điều hành cập nhật và chỉ chia sẻ thiết bị với người bạn tin tưởng.</p>
+            <p>Chúng tôi và các nhà cung cấp dịch vụ áp dụng các biện pháp phù hợp với vai trò của mình, nhưng không phương thức lưu trữ hoặc truyền dữ liệu nào có thể được đảm bảo an toàn tuyệt đối. Nếu phát hiện sự cố ảnh hưởng đến dữ liệu được xử lý bởi Tiny Shelf, chúng tôi sẽ xử lý và thông báo theo yêu cầu pháp luật áp dụng.</p>
           </section>
 
           <section id="vi-children">
-            <h2>5. Quyền riêng tư trẻ em</h2>
-            <p>Tiny Shelf không được thiết kế dành riêng cho trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân trực tiếp từ trẻ em. Nếu bạn cho rằng trẻ đã cung cấp thông tin cho chúng tôi qua một dịch vụ tích hợp, vui lòng liên hệ theo thông tin bên dưới để được hỗ trợ.</p>
+            <h2>7. Quyền riêng tư trẻ em</h2>
+            <p>Tiny Shelf là trò chơi giải trí phổ thông, không được thiết kế riêng hoặc hướng đến trẻ em dưới 13 tuổi. Chúng tôi không chủ ý yêu cầu trẻ cung cấp tên, email hoặc thông tin cá nhân để chơi. Các SDK quảng cáo và phân tích tích hợp có thể xử lý dữ liệu thiết bị hoặc dữ liệu sử dụng như mô tả ở trên; cách xử lý của các SDK còn phụ thuộc vào cấu hình, khu vực và lựa chọn quyền riêng tư hiện hành.</p>
+            <p>Nếu bạn là phụ huynh hoặc người giám hộ và có câu hỏi về dữ liệu của trẻ liên quan đến Tiny Shelf, hãy liên hệ với chúng tôi qua email ở cuối trang.</p>
           </section>
 
           <section id="vi-changes">
-            <h2>6. Thay đổi và liên hệ</h2>
-            <p>Chúng tôi có thể cập nhật chính sách này khi ứng dụng hoặc cách xử lý dữ liệu thay đổi. Phiên bản hiện hành sẽ được đăng tại trang này cùng ngày có hiệu lực mới.</p>
-            <div class="notice"><strong>Cần hoàn tất trước khi xuất bản:</strong> thay <span class="contact-placeholder">longnpdevmobile@gmail.com</span> bên dưới bằng email hỗ trợ của bạn để người dùng và đơn vị xét duyệt có thể liên hệ.</div>
+            <h2>8. Thay đổi và liên hệ</h2>
+            <p>Chúng tôi có thể cập nhật chính sách này khi tính năng trò chơi, SDK tích hợp hoặc cách xử lý dữ liệu thay đổi. Khi cập nhật, chúng tôi sẽ sửa ngày hiệu lực ở đầu trang và đăng phiên bản mới tại cùng địa chỉ. Việc bạn tiếp tục sử dụng Tiny Shelf sau ngày chính sách mới có hiệu lực sẽ chịu sự điều chỉnh của phiên bản đó, trong phạm vi pháp luật cho phép.</p>
+            <p>Nếu bạn có câu hỏi, yêu cầu hoặc lo ngại về quyền riêng tư liên quan đến Tiny Shelf, hãy liên hệ:</p>
             <p style="margin-top: 14px">Liên hệ về quyền riêng tư: <a href="mailto:longnpdevmobile@gmail.com">longnpdevmobile@gmail.com</a></p>
           </section>
         </div>
@@ -362,8 +384,10 @@
           <ol>
             <li><a href="#en-data">Information processed</a></li>
             <li><a href="#en-use">How information is used</a></li>
+            <li><a href="#en-ads">Advertising and privacy choices</a></li>
             <li><a href="#en-sharing">Third-party services</a></li>
             <li><a href="#en-retention">Storage and deletion</a></li>
+            <li><a href="#en-security">Information security</a></li>
             <li><a href="#en-children">Children's privacy</a></li>
             <li><a href="#en-changes">Changes and contact</a></li>
           </ol>
@@ -373,47 +397,67 @@
           <section id="en-data">
             <h2>1. Information processed</h2>
             <h3>Your game progress</h3>
-            <p>Your Tiny Shelf game progress, such as completed levels, unlocked areas, and in-game preferences, is stored on your device. Tiny Shelf does not upload this game save to our servers. If you uninstall the app or clear its data, progress stored only on your device may be deleted.</p>
-            <h3>Advertising and analytics data</h3>
-            <p>Tiny Shelf integrates Google AdMob to provide advertising and Firebase Analytics to understand game usage, measure performance, and improve stability. These SDKs may process technical and usage data such as device or app identifiers, device information, IP address, game interactions, and advertising-related data. Depending on Firebase Analytics configuration, usage data may include gameplay events such as level or area progress. The specific data depends on SDK configuration, your device, and your settings.</p>
+            <p>Your Tiny Shelf game progress, such as completed levels, unlocked areas, and in-game preferences, is stored locally on your device. The game does not require you to create an account to save progress this way. Tiny Shelf does not upload this game save to servers operated by us. If you uninstall the app or clear its data, progress stored only on your device may be deleted.</p>
+            <h3>Game usage data</h3>
+            <p>Tiny Shelf integrates Firebase Analytics to understand game usage, measure activity, and improve stability. Depending on how we configure Analytics, events may include game sessions, in-game interactions, level completion, or area unlocks. These are events sent through the SDK for analytics, not a mechanism for syncing your game save. The events recorded depend on the app version and configuration.</p>
+            <h3>Technical and advertising data</h3>
+            <p>Tiny Shelf integrates Google AdMob to serve and measure advertising. When the advertising or analytics SDKs operate, Google may process data such as device or advertising identifiers, app identifiers, app version, operating system, device information, IP address, usage timing, and ad impressions or interactions. Actual data types may vary by device, region, privacy choices, and SDK configuration; not every example is collected in every case.</p>
           </section>
 
           <section id="en-use">
             <h2>2. How information is used</h2>
+            <p>We use game data and integrated services for the following purposes:</p>
             <ul>
-              <li>Store and display your level progress, unlocked areas, and game settings on your device.</li>
-              <li>Serve and measure advertising through Google AdMob.</li>
-              <li>Analyze game usage and diagnose issues through Firebase Analytics to maintain and improve Tiny Shelf.</li>
+              <li>Store and display your level progress, unlocked areas, and game settings locally on your device.</li>
+              <li>Operate core game features and help you continue through levels and areas you have unlocked.</li>
+              <li>Serve, frequency-cap, and measure ad impressions and performance through Google AdMob.</li>
+              <li>Understand usage trends, identify errors, and improve Tiny Shelf's performance and stability through Firebase Analytics.</li>
             </ul>
-            <p>Ad personalization, if applicable, depends on service configuration, your privacy choices, and the laws that apply in your region. You can also manage some advertising identifiers in your device's privacy settings.</p>
+            <p>We do not use locally stored game progress to sign you into an account or sync your progress with Tiny Shelf servers. Analytics events and advertising data are processed separately under the configuration of their respective SDKs.</p>
+          </section>
+
+          <section id="en-ads">
+            <h2>3. Advertising and privacy choices</h2>
+            <p>Tiny Shelf uses Google AdMob, so you may see ads in the game. Depending on ad configuration, your region, and applicable privacy choices, ads may be personalized or non-personalized. This policy does not promise that a particular type of ad will always be shown.</p>
+            <p>You can manage or reset your advertising identifier, limit personalization if your device offers that option, and review app permissions in your operating system's privacy settings. The names and locations of these controls vary by device and operating system version. If the app presents a privacy or consent choice in your region, that choice will be applied as described in the in-app notice.</p>
+            <p>Changing ad settings may affect how ads are selected or measured, but may not remove ads from the game entirely.</p>
           </section>
 
           <section id="en-sharing">
-            <h2>3. Third-party services</h2>
-            <p>Your game save is stored on your device and Tiny Shelf does not upload it to our servers. However, depending on Firebase Analytics configuration, some game usage events may be sent to Google for analytics. Integrated Google SDKs may also receive the technical and usage data described above to provide their respective services, subject to their own policies and terms:</p>
+            <h2>4. Third-party services</h2>
+            <p>Your game save stays on your device and Tiny Shelf does not upload it to servers operated by us. However, Firebase Analytics may send configured usage events to Google, and AdMob may process data needed to serve and measure ads. These services are provided by Google and process data under Google's own policies, terms, and service settings.</p>
+            <p>For more information about Google's data practices, see:</p>
             <ul>
               <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
               <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">How Google uses data in AdMob</a></li>
               <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Firebase Analytics Policy</a></li>
             </ul>
-            <p>These SDKs do not sync your game save with Tiny Shelf servers. The event data an SDK receives depends on how it is integrated and configured in the game.</p>
+            <p>Google's processing through these SDKs does not mean that your game save is synced with Tiny Shelf servers. The specific event data an SDK receives depends on how it is integrated and configured in the game.</p>
           </section>
 
           <section id="en-retention">
-            <h2>4. Storage and deletion</h2>
-            <p>Game progress stored on your device remains there until you clear the app's data or uninstall Tiny Shelf. Depending on your device and operating system settings, device backups may include app data. Data processed by Google is retained under Google's policies and retention periods.</p>
-            <p>You can manage advertising identifiers or available privacy choices in your device settings. For information about data processed by Google, see the links above and Google's privacy tools.</p>
+            <h2>5. Storage and deletion</h2>
+            <p>Game progress remains on your device until you clear Tiny Shelf's data or uninstall the app. If your operating system or device-backup service backs up app data, that copy may be stored under the backup provider's own settings and policies. Tiny Shelf does not control how your operating system or backup service retains those copies.</p>
+            <p>To delete local progress, clear the app's data in your device settings or uninstall Tiny Shelf. This may permanently remove progress that has not been backed up. The exact steps depend on your device and operating system.</p>
+            <p>Data Google processes through AdMob and Firebase Analytics is retained under Google's policies, tools, and retention periods. Deleting data from your device does not automatically delete data Google has already processed; see the Google links above for relevant choices and procedures.</p>
+          </section>
+
+          <section id="en-security">
+            <h2>6. Information security</h2>
+            <p>Game progress is stored locally, and its protection depends in part on the security of your device, operating system account, and any backup service you use. We recommend using a device passcode, keeping your operating system up to date, and limiting access to your device.</p>
+            <p>We and our service providers use measures appropriate to our respective roles, but no method of storage or transmission can be guaranteed to be completely secure. If we become aware of an incident affecting data processed by Tiny Shelf, we will respond and provide notice as required by applicable law.</p>
           </section>
 
           <section id="en-children">
-            <h2>5. Children's privacy</h2>
-            <p>Tiny Shelf is not specifically designed for children under 13, and we do not knowingly collect personal information directly from children. If you believe a child has provided information to us through an integrated service, please contact us using the details below.</p>
+            <h2>7. Children's privacy</h2>
+            <p>Tiny Shelf is a general-audience casual game and is not specifically designed for or directed to children under 13. We do not knowingly ask children to provide a name, email address, or personal information to play. Integrated advertising and analytics SDKs may process device or usage data as described above; their handling also depends on configuration, region, and applicable privacy choices.</p>
+            <p>If you are a parent or guardian with a question about a child's data in connection with Tiny Shelf, please contact us using the email at the end of this page.</p>
           </section>
 
           <section id="en-changes">
-            <h2>6. Changes and contact</h2>
-            <p>We may update this policy as the app or its data practices change. The current version will be posted on this page with its effective date.</p>
-            <div class="notice"><strong>Required before publishing:</strong> replace <span class="contact-placeholder">longnpdevmobile@gmail.com</span> below with your support email so users and reviewers can contact you.</div>
+            <h2>8. Changes and contact</h2>
+            <p>We may update this policy when game features, integrated SDKs, or data practices change. When we do, we will update the effective date at the top of this page and post the revised version at this address. Your continued use of Tiny Shelf after a revised policy takes effect will be subject to that version to the extent permitted by law.</p>
+            <p>For questions, requests, or concerns about privacy and Tiny Shelf, contact us at:</p>
             <p style="margin-top: 14px">Privacy contact: <a href="mailto:longnpdevmobile@gmail.com">longnpdevmobile@gmail.com</a></p>
           </section>
         </div>
